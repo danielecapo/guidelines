@@ -60,7 +60,7 @@ def add_guides (glyph, direction):
                 #place an horizontal guideline using point position
                 guide.moveTo (-1000, p.y)
                 guide.lineTo (2000, p.y)
-            elif direction == 'v' or direction == 'hv':
+            if direction == 'v' or direction == 'hv':
                 #place a vertical guideline using point position
                 guide.moveTo (p.x, -2000)
                 guide.lineTo (p.x, 3000)
