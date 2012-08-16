@@ -1,0 +1,8 @@
+Place guidelines at nodes - Fontforge script
+
+This macro add three element in the Tools menu:
+
+1. Horizontal guidelines: place horizontal guidelines at selected nodes
+2. Vertical guidelines: place vertical guidelines at selected nodes
+
+3. Hor/Vert guidelines: place both vertical and horizontal guidelines at selected nodes
