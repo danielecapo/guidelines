@@ -50,11 +50,13 @@ def selected_points (contour):
 #direction can be 'h', 'v' or 'hv'
 
 def add_guides (glyph, direction):
-    f = fontforge.activeFont()
+    f = glyph.font
     guides = f.guide
     l = glyph.layers[glyph.activeLayer]
     for c in l:
         for p in selected_points(c):
+            if direction != 'h' and direction != 'v' and direction != 'hv':
+                return False
             if direction == 'h' or direction == 'hv':
                 guide = fontforge.contour()
                 #place an horizontal guideline using point position
@@ -67,9 +69,6 @@ def add_guides (glyph, direction):
                 guide.moveTo (p.x, -2000)
                 guide.lineTo (p.x, 3000)
                 guides += guide
-            else:
-                return False
-           
             f.guide = guides
     glyph.layers[glyph.activeLayer]=l
     #Is there a better way to refresh the screen?
