@@ -50,7 +50,7 @@ def selected_points (contour):
 #direction can be 'h', 'v' or 'hv'
 
 def add_guides (glyph, direction):
-    f = glyph.font
+    f = fontforge.activeFont()
     guides = f.guide
     l = glyph.layers[glyph.activeLayer]
     for c in l:
